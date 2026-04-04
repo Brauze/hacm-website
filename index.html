@@ -2130,7 +2130,93 @@
     }, 5000);
   }
   document.querySelector('#contact form').addEventListener('submit', handleContact);
+
+  // --- Testimonials Slider ---
+(function() {
+  const track = document.getElementById('testiTrack');
+  const prevBtn = document.getElementById('testiPrev');
+  const nextBtn = document.getElementById('testiNext');
+  const dotsWrap = document.getElementById('testiDots');
+  const cards = track.querySelectorAll('.testi-card');
+
+  let current = 0;
+  let perView = window.innerWidth >= 769 ? 2 : 1;
+  let total = Math.ceil(cards.length / perView);
+  let autoplayTimer;
+
+  // Build dots
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === current ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * (100 / perView) * perView}%)`;
+    // For 2-per-view: move by 100% of container per step
+    track.style.transform = `translateX(-${current * 100}%)`;
+    // Each card is 50% wide on desktop, so shift by 2 cards at a time
+    if (perView === 2) {
+      track.style.transform = `translateX(-${current * 100}%)`;
+    }
+    updateDots();
+    resetAutoplay();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // Autoplay
+  function startAutoplay() {
+    autoplayTimer = setInterval(next, 4000);
+  }
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+  });
+
+  // Responsive recalc
+  window.addEventListener('resize', () => {
+    const newPerView = window.innerWidth >= 769 ? 2 : 1;
+    if (newPerView !== perView) {
+      perView = newPerView;
+      total = Math.ceil(cards.length / perView);
+      current = 0;
+      buildDots();
+      goTo(0);
+    }
+  });
+
+  // Init
+  buildDots();
+  goTo(0);
+  startAutoplay();
+})();
 </script>
 
+  
 </body>
 </html>
