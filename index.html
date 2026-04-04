@@ -561,50 +561,99 @@
     @media (max-width: 580px) { .services-grid { grid-template-columns: 1fr; } }
 
     /* ===== TESTIMONIALS ===== */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-    .testi-card {
-      background: var(--white2);
-      border-radius: 20px;
-      padding: 32px;
-      position: relative;
-    }
-    .testi-quote {
-      font-size: 48px;
-      color: var(--purple);
-      line-height: 1;
-      margin-bottom: 16px;
-      font-family: Georgia, serif;
-    }
-    .testi-text {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.8;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-    .testi-author { display: flex; align-items: center; gap: 14px; }
-    .testi-avatar {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--base), var(--purple));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .testi-name {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--base);
-    }
-    .testi-role { font-size: 13px; color: var(--purple); margin-top: 2px; }
-    @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+   /* ===== TESTIMONIALS SLIDER ===== */
+.testimonials-slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+.testi-card {
+  background: var(--white2);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 769px) {
+  .testi-card { min-width: 50%; }
+}
+.testi-quote {
+  font-size: 48px;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 16px;
+  font-family: Georgia, serif;
+}
+.testi-text {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.testi-author { display: flex; align-items: center; gap: 14px; }
+.testi-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--base), var(--purple));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.testi-name {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--base);
+}
+.testi-role { font-size: 13px; color: var(--purple); margin-top: 2px; }
+
+/* Slider controls */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+.slider-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--purple);
+  background: #fff;
+  color: var(--purple);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+  flex-shrink: 0;
+}
+.slider-btn:hover { background: var(--purple); color: #fff; }
+.slider-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.slider-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--white3);
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+  padding: 0;
+}
+.slider-dot.active {
+  background: var(--purple);
+  width: 24px;
+  border-radius: 4px;
+}
 
     /* ===== TEAM ===== */
     .team-grid {
@@ -1329,6 +1378,7 @@
 </section>
 
 <!-- ========== TESTIMONIALS ========== -->
+<!-- ========== TESTIMONIALS ========== -->
 <section class="section section-alt" id="testimonial">
   <div class="section-inner">
     <div class="center-text reveal" style="margin-bottom:48px;">
@@ -1336,55 +1386,70 @@
       <h2 class="section-title">Stories of <span>Hope</span> &amp; Change</h2>
       <p class="section-subtitle">Hear from children, survivors, teachers, and community members whose lives have been touched by HACM's work.</p>
     </div>
-    <div class="testimonials-grid reveal">
-      <div class="testi-card">
-        <div class="testi-quote">&ldquo;</div>
-        <p class="testi-text">We appreciate Hands Against Child Marriage for choosing our school. The 'I Belong to School' project will help our pupils and community understand the value of education and the dangers of child marriage. As a school, we are committed to working together to keep our children in school and safe.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">M</div>
-          <div>
-            <div class="testi-name">Mr. Mwiwa Joseph</div>
-            <div class="testi-role">Head Teacher, Bukakaire Baptist Primary School</div>
+
+    <div class="testimonials-slider-wrap reveal">
+      <div class="testimonials-track" id="testiTrack">
+
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p class="testi-text">We appreciate Hands Against Child Marriage for choosing our school. The 'I Belong to School' project will help our pupils and community understand the value of education and the dangers of child marriage. As a school, we are committed to working together to keep our children in school and safe.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">Mr. Mwiwa Joseph</div>
+              <div class="testi-role">Head Teacher, Bukakaire Baptist Primary School</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">&ldquo;</div>
-        <p class="testi-text">Barbering transformed my life. Through hard work and belief in myself, I gained skills that led me to open my own shop. Today, I mentor young people. I am grateful to HACM for giving me the opportunity to serve the community and for deepening my understanding of social work and youth empowerment.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">M</div>
-          <div>
-            <div class="testi-name">Muzamiruh Mutumiire</div>
-            <div class="testi-role">Professional Barber &amp; Social Worker</div>
+
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p class="testi-text">Barbering transformed my life. Through hard work and belief in myself, I gained skills that led me to open my own shop. Today, I mentor young people. I am grateful to HACM for giving me the opportunity to serve the community and for deepening my understanding of social work and youth empowerment.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">Muzamiruh Mutumiire</div>
+              <div class="testi-role">Professional Barber &amp; Social Worker</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">&ldquo;</div>
-        <p class="testi-text">Across villages and towns, girls as young as 13 or 14 are forced to leave school to become wives. We see empty desks in classrooms. We see girls carrying babies instead of books. We see young mothers overwhelmed by responsibilities they were never prepared for.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">A</div>
-          <div>
-            <div class="testi-name">Acayo Oliver Nyeko</div>
-            <div class="testi-role">Social Worker, HACM</div>
+
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p class="testi-text">Across villages and towns, girls as young as 13 or 14 are forced to leave school to become wives. We see empty desks in classrooms. We see girls carrying babies instead of books. We see young mothers overwhelmed by responsibilities they were never prepared for.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Acayo Oliver Nyeko</div>
+              <div class="testi-role">Social Worker, HACM</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-quote">&ldquo;</div>
-        <p class="testi-text">Representing HACM at the Sexual and Reproductive Health and Rights Alliance Uganda dialogue was eye-opening. Empowering girls and women with knowledge and leadership is key to ending child marriage. Collaboration among communities and young leaders is essential to challenge harmful norms.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">E</div>
-          <div>
-            <div class="testi-name">Emma Mabala</div>
-            <div class="testi-role">Project Officer, HACM</div>
+
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p class="testi-text">Representing HACM at the Sexual and Reproductive Health and Rights Alliance Uganda dialogue was eye-opening. Empowering girls and women with knowledge and leadership is key to ending child marriage. Collaboration among communities and young leaders is essential to challenge harmful norms.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">E</div>
+            <div>
+              <div class="testi-name">Emma Mabala</div>
+              <div class="testi-role">Project Officer, HACM</div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
+
+    <!-- Controls -->
+    <div class="slider-controls">
+      <button class="slider-btn" id="testiPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-dots" id="testiDots"></div>
+      <button class="slider-btn" id="testiNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
   </div>
 </section>
-
 <!-- ========== VIDEOS ========== -->
 <section class="section">
   <div class="section-inner">
