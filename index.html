@@ -761,35 +761,6 @@
     }
     .donate-main-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(53,28,66,.25); color: #fff; }
 
-    /* ===== EVENTS ===== */
-    .events-list { display: flex; flex-direction: column; gap: 16px; }
-    .event-item {
-      background: var(--white2);
-      border-radius: 16px;
-      padding: 24px 28px;
-      display: grid;
-      grid-template-columns: 80px 1fr auto;
-      gap: 20px;
-      align-items: center;
-      transition: box-shadow .3s;
-    }
-    .event-item:hover { box-shadow: 0 4px 20px rgba(53,28,66,.1); }
-    .event-date-box {
-      background: var(--base);
-      border-radius: 12px;
-      text-align: center;
-      padding: 12px 8px;
-    }
-    .event-date-day { font-family: 'Quicksand', sans-serif; font-size: 28px; font-weight: 700; color: var(--yellow); line-height: 1; }
-    .event-date-month { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.7); text-transform: uppercase; margin-top: 2px; }
-    .event-title { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 16px; color: var(--base); margin-bottom: 4px; }
-    .event-meta { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 6px; }
-    .event-meta i { color: var(--purple); }
-    @media (max-width: 600px) {
-      .event-item { grid-template-columns: 64px 1fr; }
-      .event-item .btn-sm { display: none; }
-    }
-
     /* ===== CONTACT ===== */
     .contact-grid {
       display: grid;
@@ -1119,25 +1090,6 @@
 </head>
 <body>
 
-<!-- ========== TOPBAR ========== -->
-<div class="hacm-topbar">
-  <div class="container-inner">
-    <div class="topbar-contact">
-      <i class="fas fa-envelope"></i>
-      <a href="mailto:hacmug@gmail.com">hacmug@gmail.com</a>
-    </div>
-    <div class="topbar-contact">
-      <i class="fas fa-phone"></i>
-      <a href="tel:+256763179844">+256 763 179 844</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:14px;">
-      <a href="https://www.instagram.com/hands_against_child_marriage" target="_blank" title="Instagram"><i class="fab fa-instagram" style="color:#D7D3CB;font-size:16px;"></i></a>
-      <a href="https://x.com/HacmUG" target="_blank" title="X / Twitter"><i class="fab fa-x-twitter" style="color:#D7D3CB;font-size:16px;"></i></a>
-      <a href="https://www.linkedin.com/company/hands-against-child-marriage-hacm-uganda/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in" style="color:#D7D3CB;font-size:16px;"></i></a>
-      <a href="https://youtube.com/@hacmuganda" target="_blank" title="YouTube"><i class="fab fa-youtube" style="color:#D7D3CB;font-size:16px;"></i></a>
-    </div>
-  </div>
-</div>
 
 <!-- ========== NAV ========== -->
 <nav class="hacm-nav">
@@ -1165,7 +1117,6 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div>
-      <p class="hero-tagline">Uganda · Bugiri District</p>
       <h1>Join the Movement to <span>Protect Childhood</span> &amp; Promote Choice</h1>
       <p>Ending child marriage through empowering girls, educating communities, and engaging men &amp; boys to create lasting social change in Uganda.</p>
       <div class="hero-btns">
@@ -1221,30 +1172,22 @@
 <section class="section" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-img-stack">
-        <div class="about-img-placeholder">
-          <i class="fas fa-hands-helping"></i>
-          <span>HACM Community Work</span>
-        </div>
-        <div class="about-badge">
-          <div class="about-badge-num">2023</div>
-          <div class="about-badge-text">Founded in Uganda</div>
-        </div>
-      </div>
       <div class="about-text reveal">
         <p class="section-tagline">ABOUT HACM</p>
-        <h2 class="section-title">A Youth-Led Movement <span>Protecting</span> Childhood</h2>
+        <h2 class="section-title">A Youth-Led Movement <span>Protecting</span> Childhood and promoting</h2>
         <p>Hands Against Child Marriage (HACM) is a dedicated youth-led, grassroots organisation committed to ending child marriage and safeguarding the rights and dignity of children in Uganda.</p>
         <p>Our work contributes directly to the UN SDGs on gender equality, quality education, reduced inequalities, and child protection. Many within HACM are <strong>survivor advocates and community development practitioners</strong>, strengthening our survivor-centred and community-rooted approach.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-purple" onclick="openModal('aboutModal')">Read Full Story <i
+              class="fas fa-arrow-right"></i></button>
+        </div>
+                <p class="section-tagline">Core Values</p>
+
         <div class="about-values">
           <div class="value-chip" onclick="openModal('valuesModal')"><i class="fas fa-balance-scale"></i> Social Justice</div>
           <div class="value-chip" onclick="openModal('valuesModal')"><i class="fas fa-fist-raised"></i> Empowerment</div>
           <div class="value-chip" onclick="openModal('valuesModal')"><i class="fas fa-eye"></i> Transparency</div>
           <div class="value-chip" onclick="openModal('valuesModal')"><i class="fas fa-hands"></i> Inclusivity</div>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="btn btn-purple" onclick="openModal('aboutModal')">Read Full Story <i class="fas fa-arrow-right"></i></button>
-          <a href="tel:+256763179844" class="btn btn-outline"><i class="fas fa-phone"></i> +256 763 179 844</a>
         </div>
       </div>
     </div>
@@ -1255,8 +1198,7 @@
 <section class="section section-dark">
   <div class="section-inner">
     <div class="center-text" style="margin-bottom:48px;">
-      <p class="section-tagline">OUR PURPOSE</p>
-      <h2 class="section-title">Driven by a Clear <span style="color:var(--yellow)">Vision &amp; Mission</span></h2>
+      <h2 class="section-title">Our <span style="color:var(--yellow)">Vision &amp; Mission</span></h2>
     </div>
     <div class="vm-grid reveal">
       <div class="vm-card">
@@ -1273,56 +1215,11 @@
   </div>
 </section>
 
-<!-- ========== WHAT WE DO ========== -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <div class="center-text reveal" style="margin-bottom:48px;">
-      <p class="section-tagline">WHAT WE DO</p>
-      <h2 class="section-title">Our Approach to <span>Ending Child Marriage</span></h2>
-      <p class="section-subtitle">We believe in breaking cycles of harm through community-led action, education, and empowering survivors to become advocates.</p>
-    </div>
-    <div class="services-grid reveal">
-      <div class="service-card">
-        <div class="svc-icon"><i class="fas fa-school"></i></div>
-        <div class="svc-title">Schools &amp; Community Outreach</div>
-        <div class="svc-desc">In-school programmes keeping children enrolled, engaged, and protected through age-appropriate education sessions.</div>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon"><i class="fas fa-comments"></i></div>
-        <div class="svc-title">Community Dialogues</div>
-        <div class="svc-desc">Engaging parents, leaders, and faith-based organisations through barazas and local radio outreach to shift harmful norms.</div>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon"><i class="fas fa-heart"></i></div>
-        <div class="svc-title">Trauma-Informed Care</div>
-        <div class="svc-desc">Psychosocial support by professional counsellors and survivor advocates to help children and communities heal.</div>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon"><i class="fas fa-brain"></i></div>
-        <div class="svc-title">Mental Health Awareness</div>
-        <div class="svc-desc">Certified mental health advocacy through partnerships to reduce stigma and improve access to wellbeing services.</div>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon"><i class="fas fa-gavel"></i></div>
-        <div class="svc-title">Legal Protection Advocacy</div>
-        <div class="svc-desc">Working with government MDAs, CSOs, and cultural institutions to strengthen legal frameworks protecting children.</div>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon"><i class="fas fa-hands-holding-child"></i></div>
-        <div class="svc-title">Child Protection Collaboration</div>
-        <div class="svc-desc">Strategic partnerships with schools, FBOs, and grassroots organisations for referral and response systems.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== PROGRAMS ========== -->
 <section class="section" id="programs">
   <div class="section-inner">
     <div class="reveal" style="margin-bottom:48px;">
-      <p class="section-tagline">PROJECTS &amp; PROGRAMMES</p>
-      <h2 class="section-title">Our Key <span>Initiatives</span></h2>
-      <p class="section-subtitle">Four core programmes driving change at school and community level across Bugiri District, Uganda.</p>
+      <h2 class="section-title">Projects &amp; Programmes</span></h2>
     </div>
     <div class="programs-grid reveal">
       <!-- Program 1 -->
@@ -1330,7 +1227,7 @@
         <div class="program-card-header">
           <div class="program-number">01</div>
           <div class="program-icon-badge"><i class="fas fa-book-reader"></i></div>
-          <h3>I Belong to School Programme</h3>
+          <h3>I Belong to School </h3>
         </div>
         <div class="program-body">
           <p>A school and community-based child protection and education initiative that keeps children in school and reduces child marriage and early pregnancy through awareness, support, and community action.</p>
@@ -1357,7 +1254,7 @@
           <h3>A Birthday for a Cause</h3>
         </div>
         <div class="program-body">
-          <p>A community-centred initiative that transforms personal celebrations into acts of solidarity — bringing joy, body autonomy sessions, and material support to children in selected communities.</p>
+          <p>A community-centred initiative that transforms personal celebrations into acts of solidarity bringing joy, body autonomy sessions, and material support to children in selected communities.</p>
           <button class="program-read-more" onclick="openModal('prog3Modal')">Read Full Programme <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
@@ -1378,13 +1275,10 @@
 </section>
 
 <!-- ========== TESTIMONIALS ========== -->
-<!-- ========== TESTIMONIALS ========== -->
 <section class="section section-alt" id="testimonial">
   <div class="section-inner">
     <div class="center-text reveal" style="margin-bottom:48px;">
-      <p class="section-tagline">TESTIMONIALS</p>
       <h2 class="section-title">Stories of <span>Hope</span> &amp; Change</h2>
-      <p class="section-subtitle">Hear from children, survivors, teachers, and community members whose lives have been touched by HACM's work.</p>
     </div>
 
     <div class="testimonials-slider-wrap reveal">
@@ -1466,10 +1360,6 @@
         <iframe src="https://www.youtube.com/embed/qLdyPjHjEr8" title="HACM Video 2" allowfullscreen loading="lazy"></iframe>
         <div class="video-label">I Belong to School Campaign</div>
       </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/h9MbznbxlLc" title="HACM Video 3" allowfullscreen loading="lazy"></iframe>
-        <div class="video-label">Survivor Voices</div>
-      </div>
     </div>
     <div style="text-align:center;margin-top:28px;">
       <a href="https://youtube.com/@hacmuganda" target="_blank" class="btn btn-purple"><i class="fab fa-youtube"></i> View All Videos on YouTube</a>
@@ -1481,8 +1371,7 @@
 <section class="section section-alt" id="team">
   <div class="section-inner">
     <div class="reveal" style="margin-bottom:48px;">
-      <p class="section-tagline">OUR TEAM</p>
-      <h2 class="section-title">Meet the People Behind <span>HACM</span></h2>
+      <h2 class="section-title">Our <span>Team</span></h2>
       <p class="section-subtitle">A dedicated team of social workers, advocates, and young leaders committed to ending child marriage in Uganda.</p>
     </div>
     <!-- Founders -->
@@ -1499,12 +1388,6 @@
         <div class="team-name">Magumbye Felix</div>
         <div class="team-role">Co-Founder &amp; Head of Programs</div>
         <button class="team-btn" onclick="openModal('founder2Modal')"><i class="fas fa-user"></i> Full Profile</button>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">E</div>
-        <div class="team-name">Mabala Emma</div>
-        <div class="team-role">Co-Founder &amp; Project Officer</div>
-        <button class="team-btn" onclick="openModal('founder3Modal')"><i class="fas fa-user"></i> Full Profile</button>
       </div>
     </div>
     <!-- Other Team -->
@@ -1537,83 +1420,20 @@
 <section class="section" id="get-involved">
   <div class="section-inner">
     <div class="center-text reveal" style="margin-bottom:48px;">
-      <p class="section-tagline">GET INVOLVED</p>
       <h2 class="section-title">Join the <span>Movement</span></h2>
-      <p class="section-subtitle">There are many ways to contribute to ending child marriage in Uganda — choose how you'd like to get involved.</p>
     </div>
     <div class="involved-grid reveal">
       <div class="involved-card" onclick="openModal('involvedModal')">
         <i class="fas fa-hand-holding-heart"></i>
         <h3>Volunteer</h3>
-        <p>Give your time and skills to support community outreach, awareness campaigns, and child protection activities in Bugiri District and beyond.</p>
       </div>
       <div class="involved-card" onclick="openModal('involvedModal')">
         <i class="fas fa-graduation-cap"></i>
         <h3>Internship</h3>
-        <p>Gain hands-on experience in social work, child protection, advocacy, communications, or programme management while making a real difference.</p>
       </div>
       <div class="involved-card" onclick="openModal('involvedModal')">
         <i class="fas fa-briefcase"></i>
         <h3>Full-Time / Career</h3>
-        <p>Join our growing team of passionate professionals. We are always looking for dedicated social workers, advocates, and development practitioners.</p>
-      </div>
-    </div>
-    <!-- Embedded Microsoft Form -->
-    <div class="reveal">
-      <h3 style="font-family:'Quicksand',sans-serif;font-size:22px;font-weight:700;color:var(--base);margin-bottom:20px;text-align:center;">Apply or Express Interest</h3>
-      <div class="form-embed-wrap">
-        <iframe
-          width="100%"
-          height="480"
-          src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADgm07dURVVLTFVPM0s2SDA3Wlk4RlowOVAwSzlGUC4u&embed=true"
-          frameborder="0"
-          marginwidth="0"
-          marginheight="0"
-          style="border:none;max-width:100%;border-radius:12px;"
-          allowfullscreen
-          webkitallowfullscreen
-          mozallowfullscreen
-          msallowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== EVENTS ========== -->
-<section class="section section-alt" id="events">
-  <div class="section-inner">
-    <div class="reveal" style="margin-bottom:40px;">
-      <p class="section-tagline">UPCOMING EVENTS</p>
-      <h2 class="section-title">Join Our <span>Awareness Campaigns</span> &amp; Events</h2>
-    </div>
-    <div class="events-list reveal">
-      <div class="event-item">
-        <div class="event-date-box"><div class="event-date-day">15</div><div class="event-date-month">Mar</div></div>
-        <div>
-          <div class="event-title">I Belong to School Campaign Launch</div>
-          <div class="event-meta"><i class="fas fa-clock"></i> 9:00 AM – 2:00 PM <span style="margin:0 8px;color:var(--white3)">|</span><i class="fas fa-location-dot"></i> Bukakaire Baptist Primary School, Bugiri</div>
-          <div class="event-meta" style="margin-top:4px;"><i class="fas fa-user"></i> Organiser: Namawejje Hajarah – Executive Director</div>
-        </div>
-        <button class="btn btn-outline btn-sm">Details</button>
-      </div>
-      <div class="event-item">
-        <div class="event-date-box"><div class="event-date-day">22</div><div class="event-date-month">Mar</div></div>
-        <div>
-          <div class="event-title">Community Dialogue on Child Marriage Prevention</div>
-          <div class="event-meta"><i class="fas fa-clock"></i> 10:00 AM – 3:00 PM <span style="margin:0 8px;color:var(--white3)">|</span><i class="fas fa-location-dot"></i> Bugiri Municipal Council Hall</div>
-          <div class="event-meta" style="margin-top:4px;"><i class="fas fa-user"></i> Organiser: Magumbye Felix – Head of Programs</div>
-        </div>
-        <button class="btn btn-outline btn-sm">Details</button>
-      </div>
-      <div class="event-item">
-        <div class="event-date-box"><div class="event-date-day">05</div><div class="event-date-month">Apr</div></div>
-        <div>
-          <div class="event-title">Trauma-Informed Care Training for Teachers</div>
-          <div class="event-meta"><i class="fas fa-clock"></i> 8:00 AM – 4:00 PM <span style="margin:0 8px;color:var(--white3)">|</span><i class="fas fa-location-dot"></i> Hindocha Primary School, Bugiri</div>
-          <div class="event-meta" style="margin-top:4px;"><i class="fas fa-user"></i> Organiser: HACM Training Team</div>
-        </div>
-        <button class="btn btn-outline btn-sm">Details</button>
       </div>
     </div>
   </div>
@@ -1625,8 +1445,6 @@
     <div class="contact-grid reveal">
       <div>
         <p class="section-tagline">CONTACT US</p>
-        <h2 class="section-title">Get in <span>Touch</span></h2>
-        <p style="color:var(--text);margin-bottom:32px;line-height:1.7;">We'd love to hear from you — whether you want to support our work, partner with us, or simply learn more about what we do.</p>
         <div class="contact-info-list">
           <div class="contact-info-item">
             <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
@@ -1670,7 +1488,7 @@
         </div>
         <div class="reg-notice">
           <i class="fas fa-info-circle" style="color:var(--purple);margin-right:6px;"></i>
-          HACM is a registered Company Limited by Guarantee (without shares) in Uganda — Reg. No. <strong>80034440867855</strong>
+          HACM is a registered Company Limited by Guarantee (without shares) in Uganda Reg. No. <strong>80034440867855</strong>
         </div>
       </div>
     </div>
@@ -1692,7 +1510,6 @@
         <li><a href="#programs">Our Programmes</a></li>
         <li><a href="#team">Our Team</a></li>
         <li><a href="#testimonial">Testimonials</a></li>
-        <li><a href="#events">Events</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1744,7 +1561,7 @@
     <div class="modal-body">
       <p>Hands Against Child Marriage (HACM) is a dedicated youth-led movement and grassroots organisation committed to ending child marriage and safeguarding the rights and dignity of children in Uganda. Our work contributes directly to the United Nations Sustainable Development Goals (SDGs), particularly those focused on gender equality, quality education, reduced inequalities, and child protection.</p>
       <p>The organisation was founded by Namawejje Hajarah, Magumbye Felix, and Mabala Emma, driven by a deep belief in social justice, community empowerment, and the protection of children from harmful practices. The founders bring a powerful combination of professional experience and lived realities to the movement. Having worked with <strong>Mutera Global Healing</strong>, a renowned organisation dedicated to eradicating childhood sexual violence in Rwanda and Uganda, the team draws on both technical expertise and personal stories of resilience, healing, and hope.</p>
-      <p>HACM is grounded in the principles of social justice and believes that sustainable change begins with informed and empowered communities. The organisation believes true social change can only happen when communities — especially young people — are educated and empowered to think deeply about their future selves and understand how to create systems that lead to a vision free from child marriage.</p>
+      <p>HACM is grounded in the principles of social justice and believes that sustainable change begins with informed and empowered communities. The organisation believes true social change can only happen when communities especially young people are educated and empowered to think deeply about their future selves and understand how to create systems that lead to a vision free from child marriage.</p>
       <p>That is why we work with girls, boys, young people, parents, and community leaders to challenge the social norms, traditions, and systems that perpetuate child marriage. A key pillar of our work is engaging men and boys as allies, recognising their critical role in preventing child marriage and promoting gender equality.</p>
       <h4>Our Partnerships</h4>
       <ul class="modal-list">
@@ -1752,7 +1569,7 @@
         <li>Civil Society Organisations (CSOs) and Faith-Based Organisations (FBOs)</li>
         <li>Cultural institutions and government Ministries, Departments &amp; Agencies (MDAs)</li>
         <li>Grassroots organisations and community-based structures</li>
-        <li>Future Rights — providing mentoring, capacity-building, and funding access</li>
+        <li>Future Rights providing mentoring, capacity-building, and funding access</li>
       </ul>
     </div>
   </div>
@@ -1800,12 +1617,12 @@
       <button class="modal-close" onclick="closeModal('prog1Modal')"><i class="fas fa-times"></i></button>
       <div class="modal-icon-row">
         <div class="modal-icon"><i class="fas fa-book-reader"></i></div>
-        <div><h2>I Belong to School Programme</h2><p>School &amp; community-based child protection and education initiative</p></div>
+        <div><h2>I Belong to School</h2><p>School &amp; community-based child protection and education initiative</p></div>
       </div>
     </div>
     <div class="modal-body">
       <p>The I Belong to School Programme is a school and community-based child protection and education initiative implemented by Hands Against Child Marriage in primary and secondary schools. This programme responds to the strong and well-documented link between school dropout, child marriage, early pregnancy, and child labour.</p>
-      <h4>The Context</h4>
+    
       <p>In Uganda, approximately 1 in 3 girls is married before the age of 18, and about 25% of girls aged 15–19 have begun childbearing. At the same time, nearly a quarter of children are engaged in child labour. These challenges are most severe in rural districts, where poverty, harmful gender norms, sexual violence, and limited access to support services continue to push children out of school.</p>
       <h4>What the Programme Does</h4>
       <ul class="modal-list">
@@ -1817,7 +1634,7 @@
         <li>Strengthens referral and response systems for children at risk</li>
       </ul>
       <h4>Impact</h4>
-      <p>By combining education support with community action, the programme increases school enrolment and retention, reduces risks of child marriage and early pregnancy, and positions education as a protective pathway — ensuring every child can remain in school and grow toward a safe, dignified, and hopeful future.</p>
+      <p>By combining education support with community action, the programme increases school enrolment and retention, reduces risks of child marriage and early pregnancy, and positions education as a protective pathway ensuring every child can remain in school and grow toward a safe, dignified, and hopeful future.</p>
     </div>
   </div>
 </div>
@@ -1829,13 +1646,13 @@
       <button class="modal-close" onclick="closeModal('prog2Modal')"><i class="fas fa-times"></i></button>
       <div class="modal-icon-row">
         <div class="modal-icon"><i class="fas fa-hands-helping"></i></div>
-        <div><h2>Trauma Healing &amp; Child Protection Workshops</h2><p>Free workshops and seminars for communities and institutions</p></div>
+        <div><h2>Trauma Healing &amp; Child Protection Workshops</h2><p>Workshops and seminars for communities and child protection stake holders</p></div>
       </div>
     </div>
     <div class="modal-body">
       <p>HACM conducts trauma healing and child protection workshops and seminars to support the wellbeing and safety of children and communities affected by child marriage and related forms of violence. These workshops are conducted upon invitation by schools, community institutions, organisations, and local structures that seek to strengthen child protection and promote healing.</p>
       <h4>Our Approach</h4>
-      <p>The workshops and seminars are facilitated by professional counsellors and survivor advocates, drawing from HACM's strong grounding in trauma-informed practice. The approach is shaped by the lived and professional experiences of HACM's founders, who are survivor advocates and trauma healing facilitators with experience from Mutera Global Healing — a renowned organisation ending childhood sexual violence in Uganda and Rwanda.</p>
+      <p>The workshops and seminars are facilitated by professional counsellors and survivor advocates, drawing from HACM's strong grounding in trauma-informed practice. The approach is shaped by the lived and professional experiences of HACM's founders, who are survivor advocates and trauma healing facilitators with experience from Mutera Global Healing a renowned organisation ending childhood sexual violence in Uganda and Rwanda.</p>
       <h4>Key Features</h4>
       <ul class="modal-list">
         <li>Offered at no cost to institutions and organisations</li>
@@ -1856,7 +1673,7 @@
       <button class="modal-close" onclick="closeModal('prog3Modal')"><i class="fas fa-times"></i></button>
       <div class="modal-icon-row">
         <div class="modal-icon"><i class="fas fa-birthday-cake"></i></div>
-        <div><h2>A Birthday for a Cause</h2><p>Transforming personal celebrations into acts of solidarity</p></div>
+        <div><h2>A Birthday for a Cause</h2><p>Transforming personal celebrations into acts of solidarity and inspiration</p></div>
       </div>
     </div>
     <div class="modal-body">
@@ -1869,7 +1686,7 @@
         <li>Support items raised through prior fundraising campaigns are distributed to families and children</li>
       </ul>
       <h4>How to Get Involved</h4>
-      <p>Partners, well-wishers, and child advocates are encouraged to join the team — whether by fundraising, participating in the celebration, or supporting delivery — so that every birthday becomes a meaningful act of solidarity and hope for children.</p>
+      <p>Partners, well-wishers, and child advocates are encouraged to join the team whether by fundraising, participating in the celebration, or supporting delivery so that every birthday becomes a meaningful act of solidarity and hope for children.</p>
     </div>
   </div>
 </div>
@@ -1894,7 +1711,7 @@
         <li>Resources, tools, and innovative approaches are shared across organisations</li>
       </ul>
       <h4>Our Philosophy</h4>
-      <p>The programme encourages continuous learning, unlearning, and relearning — ensuring that both HACM staff and participating professionals remain equipped and updated to respond effectively to the evolving needs of children and communities while ensuring best practices in child protection.</p>
+      <p>The programme encourages continuous learning, unlearning, and relearning ensuring that both HACM staff and participating professionals remain equipped and updated to respond effectively to the evolving needs of children and communities while ensuring best practices in child protection.</p>
     </div>
   </div>
 </div>
@@ -1920,7 +1737,7 @@
       </div>
       <p>Hajarah Namawejje is a dedicated Social Worker and Child Protection Advocate committed to promoting the safety, dignity, and well-being of children and vulnerable communities. With professional experience in the NGO sector, she works at the intersection of social justice, community empowerment, and safeguarding.</p>
       <p>At Hands Against Child Marriage (HACM), Hajarah contributes to the design and implementation of community-driven initiatives aimed at preventing child marriage, addressing gender-based violence, and strengthening child protection systems. Her work focuses on tackling the root causes of vulnerability, including harmful social norms, economic challenges, and limited access to education and essential services.</p>
-      <p>She believes that effective social work goes beyond direct service delivery — it requires advocacy, collaboration, and systems transformation. Hajarah is passionate about engaging communities, empowering young people, and promoting prevention-centred approaches that create long-term impact.</p>
+      <p>She believes that effective social work goes beyond direct service delivery it requires advocacy, collaboration, and systems transformation. Hajarah is passionate about engaging communities, empowering young people, and promoting prevention-centred approaches that create long-term impact.</p>
       <p>Guided by a strong commitment to social change, Hajarah continues to champion inclusive, community-led solutions that protect children and promote equity, justice, and opportunity for all.</p>
     </div>
   </div>
@@ -1985,7 +1802,7 @@
       <button class="modal-close" onclick="closeModal('involvedModal')"><i class="fas fa-times"></i></button>
       <div class="modal-icon-row">
         <div class="modal-icon"><i class="fas fa-hand-holding-heart"></i></div>
-        <div><h2>Get Involved with HACM</h2><p>Join the movement — volunteer, intern, or build your career</p></div>
+        <div><h2>Get Involved with HACM</h2><p>Join the movement volunteer, intern, or build your career</p></div>
       </div>
     </div>
     <div class="modal-body">
