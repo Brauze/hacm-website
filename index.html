@@ -1019,7 +1019,7 @@
     /* ===== VIDEOS SECTION ===== */
     .videos-grid {
       display: grid;
-      grid-template-columns: auto;
+      grid-template-columns: (2, 1fr);
       gap: 20px;
     }
     .video-card {
@@ -1134,40 +1134,6 @@
   </div>
 </section>
 
-<!-- ========== STATS ========== -->
-<div class="stat-bar">
-  <div class="stat-bar-inner">
-    <div class="stat-item reveal">
-      <div class="stat-icon"><i class="fas fa-child"></i></div>
-      <div>
-        <div class="stat-num">252+</div>
-        <div class="stat-label">Children Reached</div>
-      </div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-icon"><i class="fas fa-school"></i></div>
-      <div>
-        <div class="stat-num">3+</div>
-        <div class="stat-label">Schools &amp; Communities</div>
-      </div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-icon"><i class="fas fa-users"></i></div>
-      <div>
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Dedicated Team Members</div>
-      </div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-      <div>
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Trained Teachers &amp; Partners</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ========== ABOUT ========== -->
 <section class="section" id="about">
   <div class="section-inner">
@@ -1275,6 +1241,140 @@
   </div>
 </section>
 
+<!-- ========== STATS ========== -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item reveal">
+      <div class="stat-icon"><i class="fas fa-child"></i></div>
+      <div>
+        <div class="stat-num">252+</div>
+        <div class="stat-label">Children Reached</div>
+      </div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-icon"><i class="fas fa-school"></i></div>
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Schools &amp; Communities</div>
+      </div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-icon"><i class="fas fa-users"></i></div>
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Dedicated Team Members</div>
+      </div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+      <div>
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Trained Teachers &amp; Partners</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== VIDEOS ========== -->
+<section class="section">
+  <div class="section-inner">
+    <div class="center-text reveal" style="margin-bottom:36px;">
+      <h2 class="section-title">Watch Our <span>Story</span></h2>
+    </div>
+    <div class="videos-grid reveal">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/-LwvENEWWw0" title="HACM Video 1" allowfullscreen
+          loading="lazy"></iframe>
+        <div class="video-label">HACM Community Outreach</div>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/qLdyPjHjEr8" title="HACM Video 2" allowfullscreen
+          loading="lazy"></iframe>
+        <div class="video-label">I Belong to School Campaign</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <a href="https://youtube.com/@hacmuganda" target="_blank" class="btn btn-purple"><i class="fab fa-youtube"></i>
+        View All Videos on YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TEAM ========== -->
+<section class="section section-alt" id="team">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:48px;">
+      <h2 class="section-title">Our <span>Team</span></h2>
+      <p class="section-subtitle">A dedicated team of social workers, advocates, and young leaders committed to ending
+        child marriage in Uganda.</p>
+    </div>
+    <!-- Founders -->
+    <h3
+      style="font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:var(--purple);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;">
+      Founders</h3>
+    <div class="team-grid reveal" style="margin-bottom:40px;">
+      <div class="team-card">
+        <div class="team-avatar">H</div>
+        <div class="team-name">Namawejje Hajarah</div>
+        <div class="team-role">Founder &amp; Executive Director</div>
+        <button class="team-btn" onclick="openModal('founder1Modal')"><i class="fas fa-user"></i> Full Profile</button>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">F</div>
+        <div class="team-name">Magumbye Felix</div>
+        <div class="team-role">Co-Founder &amp; Head of Programs</div>
+        <button class="team-btn" onclick="openModal('founder2Modal')"><i class="fas fa-user"></i> Full Profile</button>
+      </div>
+    </div>
+    <!-- Other Team -->
+    <h3
+      style="font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:var(--purple);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;">
+      Team Members</h3>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-avatar">G</div>
+        <div class="team-name">Gimbo Irene</div>
+        <div class="team-role">Social Worker</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">A</div>
+        <div class="team-name">Acayo Oliver Nyeko</div>
+        <div class="team-role">Social Worker</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">N</div>
+        <div class="team-name">Namulumba Joanita</div>
+        <div class="team-role">Accounting Officer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">N</div>
+        <div class="team-name">Namuleme Sumayah</div>
+        <div class="team-role">Social Worker</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">M</div>
+        <div class="team-name">Muzamiruh Mutumiire</div>
+        <div class="team-role">Social Worker</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">K</div>
+        <div class="team-name">Kagweri Tony</div>
+        <div class="team-role">Programme Specialist</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">O</div>
+        <div class="team-name">Okoth Rogers</div>
+        <div class="team-role">MEAL Officer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">O</div>
+        <div class="team-name">Onjia Racheal</div>
+        <div class="team-role">Communications Associate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== TESTIMONIALS ========== -->
 <section class="section section-alt" id="testimonial">
   <div class="section-inner">
@@ -1343,65 +1443,6 @@
       <button class="slider-btn" id="testiNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-  </div>
-</section>
-<!-- ========== VIDEOS ========== -->
-<section class="section">
-  <div class="section-inner">
-    <div class="center-text reveal" style="margin-bottom:36px;">
-      <h2 class="section-title">Watch Our <span>Story</span></h2>
-    </div>
-    <div class="videos-grid reveal">
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/-LwvENEWWw0" title="HACM Video 1" allowfullscreen loading="lazy"></iframe>
-        <div class="video-label">HACM Community Outreach</div>
-      </div>
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/qLdyPjHjEr8" title="HACM Video 2" allowfullscreen loading="lazy"></iframe>
-        <div class="video-label">I Belong to School Campaign</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:28px;">
-      <a href="https://youtube.com/@hacmuganda" target="_blank" class="btn btn-purple"><i class="fab fa-youtube"></i> View All Videos on YouTube</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== TEAM ========== -->
-<section class="section section-alt" id="team">
-  <div class="section-inner">
-    <div class="reveal" style="margin-bottom:48px;">
-      <h2 class="section-title">Our <span>Team</span></h2>
-      <p class="section-subtitle">A dedicated team of social workers, advocates, and young leaders committed to ending child marriage in Uganda.</p>
-    </div>
-    <!-- Founders -->
-    <h3 style="font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:var(--purple);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;">Founders</h3>
-    <div class="team-grid reveal" style="margin-bottom:40px;">
-      <div class="team-card">
-        <div class="team-avatar">H</div>
-        <div class="team-name">Namawejje Hajarah</div>
-        <div class="team-role">Founder &amp; Executive Director</div>
-        <button class="team-btn" onclick="openModal('founder1Modal')"><i class="fas fa-user"></i> Full Profile</button>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">F</div>
-        <div class="team-name">Magumbye Felix</div>
-        <div class="team-role">Co-Founder &amp; Head of Programs</div>
-        <button class="team-btn" onclick="openModal('founder2Modal')"><i class="fas fa-user"></i> Full Profile</button>
-      </div>
-    </div>
-    <!-- Other Team -->
-    <h3 style="font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:var(--purple);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;">Team Members</h3>
-    <div class="team-grid reveal">
-      <div class="team-card"><div class="team-avatar">G</div><div class="team-name">Gimbo Irene</div><div class="team-role">Social Worker</div></div>
-      <div class="team-card"><div class="team-avatar">A</div><div class="team-name">Acayo Oliver Nyeko</div><div class="team-role">Social Worker</div></div>
-      <div class="team-card"><div class="team-avatar">N</div><div class="team-name">Namulumba Joanita</div><div class="team-role">Accounting Officer</div></div>
-      <div class="team-card"><div class="team-avatar">N</div><div class="team-name">Namuleme Sumayah</div><div class="team-role">Social Worker</div></div>
-      <div class="team-card"><div class="team-avatar">M</div><div class="team-name">Muzamiruh Mutumiire</div><div class="team-role">Social Worker</div></div>
-      <div class="team-card"><div class="team-avatar">K</div><div class="team-name">Kagweri Tony</div><div class="team-role">Programme Specialist</div></div>
-      <div class="team-card"><div class="team-avatar">O</div><div class="team-name">Okoth Rogers</div><div class="team-role">MEAL Officer</div></div>
-      <div class="team-card"><div class="team-avatar">O</div><div class="team-name">Onjia Racheal</div><div class="team-role">Communications Associate</div></div>
-    </div>
   </div>
 </section>
 
