@@ -814,7 +814,7 @@
       padding-bottom: 40px;
       border-bottom: 1px solid rgba(255,255,255,.1);
     }
-    .footer-brand p { font-size: 14px; line-height: 1.7; margin: 16px 0 20px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin: 16px 0 20px;  color: rgba(255, 255, 255, .6);}
     .footer-logo { filter: brightness(0) invert(1); opacity: .85; height: 48px; width: auto; }
     .footer-col h4 {
       font-family: 'Quicksand', sans-serif;
@@ -1019,7 +1019,7 @@
     /* ===== VIDEOS SECTION ===== */
     .videos-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: auto;
       gap: 20px;
     }
     .video-card {
@@ -1173,7 +1173,6 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-text reveal">
-        <p class="section-tagline">ABOUT HACM</p>
         <h2 class="section-title">A Youth-Led Movement <span>Protecting</span> Childhood and promoting</h2>
         <p>Hands Against Child Marriage (HACM) is a dedicated youth-led, grassroots organisation committed to ending child marriage and safeguarding the rights and dignity of children in Uganda.</p>
         <p>Our work contributes directly to the UN SDGs on gender equality, quality education, reduced inequalities, and child protection. Many within HACM are <strong>survivor advocates and community development practitioners</strong>, strengthening our survivor-centred and community-rooted approach.</p>
@@ -1181,8 +1180,10 @@
           <button class="btn btn-purple" onclick="openModal('aboutModal')">Read Full Story <i
               class="fas fa-arrow-right"></i></button>
         </div>
-                <p class="section-tagline">Core Values</p>
 
+        <h3
+          style="font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:var(--purple);margin-bottom:20px;letter-spacing:1px;">
+          Core Values</h3>
         <div class="about-values">
           <div class="value-chip" onclick="openModal('valuesModal')"><i class="fas fa-balance-scale"></i> Social Justice</div>
           <div class="value-chip" onclick="openModal('valuesModal')"><i class="fas fa-fist-raised"></i> Empowerment</div>
@@ -1348,7 +1349,6 @@
 <section class="section">
   <div class="section-inner">
     <div class="center-text reveal" style="margin-bottom:36px;">
-      <p class="section-tagline">OUR WORK IN ACTION</p>
       <h2 class="section-title">Watch Our <span>Story</span></h2>
     </div>
     <div class="videos-grid reveal">
@@ -1407,7 +1407,6 @@
 
 <!-- ========== DONATE ========== -->
 <div class="donate-section" id="donation">
-  <p class="section-tagline" style="justify-content:center;color:var(--base);opacity:.7;">SUPPORT OUR CAUSE</p>
   <h2 class="section-title" style="color:var(--base);margin:0 auto 12px;">Make a Difference <span style="color:var(--purple)">Today</span></h2>
   <p class="section-subtitle" style="max-width:520px;margin:0 auto 36px;color:var(--base);opacity:.8;">Your donation helps keep girls in school, supports trauma healing, and funds community programmes that protect Uganda's children.</p>
   <a href="https://store.pesapal.com/donatetoendchildmarriage" target="_blank" class="donate-main-btn">
@@ -1444,7 +1443,7 @@
   <div class="section-inner">
     <div class="contact-grid reveal">
       <div>
-        <p class="section-tagline">CONTACT US</p>
+        <h2 class="section-title">Contact <span>Us</span></h2>
         <div class="contact-info-list">
           <div class="contact-info-item">
             <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
